@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cls{
+            background-color: black;
+        }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+
+        //代码方式一
+    // $(function () {
+    //             //获取按钮,点击按钮,为div添加一个类样式
+    //             $("#btn").click(function () {
+    //                 //$("#dv").addClass("cls");//在addClass方法中类样式的名字前面没有点(.)
+    //                 //$("#dv").addClass("cls").addClass("cls2");
+
+    //                 //另一种写法,addClass添加样式的时候.多个类样式的名字中间用空格隔开
+    //                 $("#dv").addClass("cls cls2");
+    //             });
+
+    //             $("#btn2").click(function () {
+    //                 //移除一个元素的类样式
+    //                 //$("#dv").removeClass("cls");
+    //                 //移除div的所有的类样式,removeClass方法中什么也不写移除的是当前元素的所有的类样式
+    //                 $("#dv").removeClass();
+    //             });
+    //         });
+
+
+
+        //页面加载后点击按钮实现开关灯的效果
+        $(function () {
+
+            // 代码方式二
+//            $("#btn").click(function () {
+//                //先判断body是否应用了某个类样式,如果应用了就移除,如果没有应用就让body应用这个类样式
+//                if($("body").hasClass("cls")){
+//                    //应用了--移除该类样式
+//                    $("body").removeClass("cls");
+//                    $(this).val("关灯");
+//
+//                }else{
+//                    //没有应用--让body添加这个类样式
+//                    $("body").addClass("cls");
+//                    $(this).val("开灯");
+//                }
+//            });
+
+            //更简单的代码
+            $("#btn").click(function () {
+                $("body").toggleClass("cls");//切换类样式
+            });
+
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="开关灯" id="btn"/>
+</body>
+</html>
