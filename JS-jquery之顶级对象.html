@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- JavaScript框架库:就是一个普通的js文件,封装了很多的函数,封装了很多兼容的代码
+    jQuery是JavaScript框架库中的一种
+    jQuery的好处:写的少,做的多,链式编程,隐式迭代等...
+    jQuery可以解决js兼容的问题 -->
+
+    <script>
+
+    /*
+    *
+    * DOM中的顶级对象:docuemnt---页面中的顶级对象
+    * docuemnt点出来的是DOM中的属性和方法
+    * BOM中的顶级对象:window----浏览器中的顶级对象
+    * window点出来的是浏览器中的属性和方法
+    * window.document
+    * jQuery的顶级对象:jQuery---$
+    * $点出来的是jQuery中的方法
+    *
+    *
+    * */
+
+
+
+     //使用传统的js想要等页面加载完就可以使用到控件的事件必须把事件注册写在window.onload=function () {}的作用域中，格式如下
+//        window.onload=function () {
+//            document.getElementById("btn").onclick=function () {
+//                //获取div根据id的方式来获取
+//                var divObj=document.getElementById("dv");
+//                divObj.style.width="200px";
+//                divObj.style.height="100px";
+//                divObj.style.backgroundColor="red";
+//            } ;
+//        };
+    </script>
+
+  <!-- jquery的使用 必须要一定要先引入jquery文件-->
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        // 想要在页面加载完使用控件的事件，必须要写在作用域内 $(function () {})
+        //页面加载后的一个事件
+        $(function () {
+            $("#btn").click(function () {
+                $("#dv").css({"width":"200px","height":"100px","backgroundColor":"green"});
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="显示效果" id="btn"/>
+<div id="dv"></div>
+</body>
+</html>
